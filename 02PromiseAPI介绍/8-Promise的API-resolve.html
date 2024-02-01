@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise API - resolve</title>
+</head>
+<body>
+    <script>
+        function rand(m, n) {
+            return Math.ceil(Math
+                .random() * (n - m + 1)) + m - 1;
+        }
+        let p1 = Promise.resolve(521);
+        console.log("p1" + p1);
+
+        let p2 = Promise.resolve(new Promise((resolve, reject)=>{
+            let n = rand(1,100);
+            if(n>50) resolve("成功");
+            else reject("失败");
+        }));
+        console.log("p2"+p2);
+        p2.then(value=>{
+            console.log(value);
+        }).catch(reason=>{
+            console.log(reason);
+        });
+    </script>
+</body>
+</html>

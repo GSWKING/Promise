@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise API</title>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve, reject)=>{
+            // ** 同步调用
+            console.log(111);
+            let n = 13;
+            if(n>14) resolve();
+            else reject();
+        });
+
+        console.log(222);
+        //  ** 异步操作
+        p.then((value)=>{
+            console.log(333);
+        },(reason)=>{
+            console.log(444)
+        })
+    </script>
+</body>
+</html>
