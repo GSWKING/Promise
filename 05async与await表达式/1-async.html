@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async函数</title>
+</head>
+<body>
+    <script>
+        async function main(){
+            // 1、非Promise对象
+            // return 521;
+            // 2、Promise对象
+            // return new Promise((resolve, reject)=>{
+            //     resolve('ok');
+            // });
+            // 3、抛出错误
+            throw 'Error';
+        }
+        let result = main();
+        console.log(result);
+    </script>
+</body>
+</html>
